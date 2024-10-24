@@ -52,7 +52,7 @@
   </head>
   <body>
     <div class="fundo">
-      <h1>Tiw_Well</h1>
+      <h1>TiwWell</h1>
       <div class="calculadora">
         <h1>Calculadora</h1>
         <p id="resultado"></p>
@@ -121,6 +121,22 @@
             document.getElementById('resultado').innerHTML = "Nada..."
         }
       }
+      document.addEventListener("keydown", function (event) {
+        const key = event.key;
+
+        if (!isNaN(key) || key === "." || key === "+" || key === "-" || key === "*" || key === "/") {
+          insert(key);
+        }
+        else if (key === "Enter") {
+          calcular();
+        }
+        else if (key === "Backspace") {
+          back();
+        }
+        else if (key === "Delete") {
+          clean();
+        }
+      });
     </script>
   </body>
 </html>
